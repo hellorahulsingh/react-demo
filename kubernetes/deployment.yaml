@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-react-app
-        image: ghcr.io/hellorahulsingh/react-demo:sha-7a7901fb81ed1fde04b316600a22bfe10cd5a74b
+        image: ghcr.io/hellorahulsingh/react-demo:sha-b83daff25f31e668ffe44be6b376f3f8a71005b9
         # Image will be automatically updated by CI/CD pipeline
         imagePullPolicy: Always
         ports:
