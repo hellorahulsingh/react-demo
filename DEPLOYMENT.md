@@ -139,7 +139,7 @@ amd paste in the argocd password input box
 
 
 kubectl get pods
-kubectl port-forward simple-react-app-<................> 3700:80 --address 0.0.0.0
+kubectl port-forward simple-react-app-7cff775786-2tndl 3700:80 --address 0.0.0.0
 
 after every change
 once the ghcr has run successfully
