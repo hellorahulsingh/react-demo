@@ -69,7 +69,7 @@ Add the token generated above to your repo
 Run the image after cicd pipeline has triggered and check the new image path in kubernetes/deployment.yml file
 for locally running the docker ghcr image, use the following command
 ```
-    docker run -d -p 1010:80 ghcr.io/hellorahulsingh/react-demo:sha-7e4a0af76acd4134651fbb39692869eb57deed75
+    docker run -d -p 1010:80 ghcr.io/hellorahulsingh/react-demo:sha-7a7901fb81ed1fde04b316600a22bfe10cd5a74b
     open browser: http://localhost:1010/
 ```
 
@@ -78,7 +78,7 @@ if you are getting unaithorized issue for the above docker run command, follow t
     Image visibility: If the image is private, then login is mandatory, and your GitHub user must have access to the repo that hosts the image.
 
     To make the image public, go to:
-    GitHub > your repo > Packages > devsecops-demo > Package settings
+    GitHub > your repo > Packages > react-demo > Package settings
     → Set visibility to public
 ```
 =================================================
