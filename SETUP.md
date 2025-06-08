@@ -54,3 +54,31 @@ Create access token in github, so that you can access ghcr.io using access token
 https://youtu.be/Ke_Wr5zPE0A?t=3279
 
 =================================================
+
+Add the token generated above to your repo
+1. go to repo
+2. go to settings of the repo
+3. left menu -> secrets and variabled -> actions
+4. create new repository secret
+4. fill the details
+   TOKEN
+   #### CHECK TEAMS ####
+
+=================================================
+
+Run the image after cicd pipeline has triggered and check the new image path in kubernetes/deployment.yml file
+for locally running the docker ghcr image, use the following command
+```
+    docker run -d -p 1010:80 ghcr.io/hellorahulsingh/react-demo:sha-7e4a0af76acd4134651fbb39692869eb57deed75
+    open browser: http://localhost:1010/
+```
+
+if you are getting unaithorized issue for the above docker run command, follow this
+```
+    Image visibility: If the image is private, then login is mandatory, and your GitHub user must have access to the repo that hosts the image.
+
+    To make the image public, go to:
+    GitHub > your repo > Packages > devsecops-demo > Package settings
+    → Set visibility to public
+```
+=================================================
