@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-react-app
+  labels:
+    app: simple-react-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-react-app
+  template:
+    metadata:
+      labels:
+        app: simple-react-app
+    spec:
+      containers:
+      - name: simple-react-app
+        image: ghcr.io/hellorahulsingh/devsecops-demo:sha-3fe98c74a42973ac57ed1f20bc36462e28c29b07
+        # Image will be automatically updated by CI/CD pipeline
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "0.5"
+            memory: "512Mi"
+          requests:
+            cpu: "0.2"
+            memory: "256Mi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      imagePullSecrets:
+      - name: github-container-registry
